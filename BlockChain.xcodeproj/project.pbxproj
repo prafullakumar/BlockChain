@@ -3,11 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		2D34B55C47FD80B7A8A97FE9 /* Pods_BlockChain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEE8F04D5A36B2323FF8FB84 /* Pods_BlockChain.framework */; };
+		77229B56240A38530000EDCE /* BCErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77229B55240A38530000EDCE /* BCErrorView.swift */; };
+		77229B58240A38AD0000EDCE /* UIViewController+ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77229B57240A38AD0000EDCE /* UIViewController+ActivityIndicator.swift */; };
+		77229B5B240A39A20000EDCE /* UIView+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77229B5A240A39A20000EDCE /* UIView+Extention.swift */; };
+		77229B5D240A39F20000EDCE /* ScrollableStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77229B5C240A39F20000EDCE /* ScrollableStackView.swift */; };
+		77229B5F240A47ED0000EDCE /* BCEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77229B5E240A47ED0000EDCE /* BCEntryViewController.swift */; };
+		77229B61240A55100000EDCE /* BCEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77229B60240A55100000EDCE /* BCEntryViewModel.swift */; };
 		773B5A87240A263300DD00AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773B5A86240A263300DD00AC /* AppDelegate.swift */; };
 		773B5A8B240A263300DD00AC /* BCRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773B5A8A240A263300DD00AC /* BCRootViewController.swift */; };
 		773B5A90240A263400DD00AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 773B5A8F240A263400DD00AC /* Assets.xcassets */; };
@@ -29,6 +35,12 @@
 /* Begin PBXFileReference section */
 		468A6C312AF093BE6CBB956B /* Pods-BlockChain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlockChain.debug.xcconfig"; path = "Target Support Files/Pods-BlockChain/Pods-BlockChain.debug.xcconfig"; sourceTree = "<group>"; };
 		60C8A2714C37C29F8D054EAC /* Pods-BlockChain.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlockChain.release.xcconfig"; path = "Target Support Files/Pods-BlockChain/Pods-BlockChain.release.xcconfig"; sourceTree = "<group>"; };
+		77229B55240A38530000EDCE /* BCErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCErrorView.swift; sourceTree = "<group>"; };
+		77229B57240A38AD0000EDCE /* UIViewController+ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ActivityIndicator.swift"; sourceTree = "<group>"; };
+		77229B5A240A39A20000EDCE /* UIView+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extention.swift"; sourceTree = "<group>"; };
+		77229B5C240A39F20000EDCE /* ScrollableStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableStackView.swift; sourceTree = "<group>"; };
+		77229B5E240A47ED0000EDCE /* BCEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCEntryViewController.swift; sourceTree = "<group>"; };
+		77229B60240A55100000EDCE /* BCEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCEntryViewModel.swift; sourceTree = "<group>"; };
 		773B5A83240A263300DD00AC /* BlockChain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlockChain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		773B5A86240A263300DD00AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		773B5A8A240A263300DD00AC /* BCRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCRootViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +76,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		77229B54240A37E20000EDCE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				77229B55240A38530000EDCE /* BCErrorView.swift */,
+				77229B57240A38AD0000EDCE /* UIViewController+ActivityIndicator.swift */,
+				77229B5C240A39F20000EDCE /* ScrollableStackView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		77229B59240A39830000EDCE /* Autolayout */ = {
+			isa = PBXGroup;
+			children = (
+				77229B5A240A39A20000EDCE /* UIView+Extention.swift */,
+			);
+			path = Autolayout;
+			sourceTree = "<group>";
+		};
 		773B5A7A240A263300DD00AC = {
 			isa = PBXGroup;
 			children = (
@@ -87,8 +117,12 @@
 		773B5A85240A263300DD00AC /* BlockChain */ = {
 			isa = PBXGroup;
 			children = (
+				77229B59240A39830000EDCE /* Autolayout */,
+				77229B54240A37E20000EDCE /* Views */,
 				773B5A86240A263300DD00AC /* AppDelegate.swift */,
 				773B5A8A240A263300DD00AC /* BCRootViewController.swift */,
+				77229B5E240A47ED0000EDCE /* BCEntryViewController.swift */,
+				77229B60240A55100000EDCE /* BCEntryViewModel.swift */,
 				773B5A8F240A263400DD00AC /* Assets.xcassets */,
 				773B5A91240A263400DD00AC /* LaunchScreen.storyboard */,
 				773B5A94240A263400DD00AC /* Info.plist */,
@@ -122,7 +156,6 @@
 				D481977B65D31645A7FA0BB9 /* Pods-BlockChainTests.debug.xcconfig */,
 				F9EA44DBC4CF08B2977AFE11 /* Pods-BlockChainTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -311,7 +344,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77229B5F240A47ED0000EDCE /* BCEntryViewController.swift in Sources */,
+				77229B5D240A39F20000EDCE /* ScrollableStackView.swift in Sources */,
 				773B5A8B240A263300DD00AC /* BCRootViewController.swift in Sources */,
+				77229B5B240A39A20000EDCE /* UIView+Extention.swift in Sources */,
+				77229B61240A55100000EDCE /* BCEntryViewModel.swift in Sources */,
+				77229B58240A38AD0000EDCE /* UIViewController+ActivityIndicator.swift in Sources */,
+				77229B56240A38530000EDCE /* BCErrorView.swift in Sources */,
 				773B5A87240A263300DD00AC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

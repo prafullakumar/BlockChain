@@ -10,11 +10,21 @@ import UIKit
 
 class BCRootViewController: UIViewController {
 
+    lazy var errorView: BCErrorView = BCErrorView(delgate: self)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .white
     }
 
-
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+    }
 }
 
+extension BCRootViewController: BCErrorViewDelegate {
+    func retry() {
+        errorView.hide()
+    }
+}
