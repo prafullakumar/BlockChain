@@ -12,7 +12,7 @@ import UIKit
 
 
 
-class BCEntryViewController: UIViewController {
+final class BCEntryViewController: UIViewController {
     
     private let buttonHeight: CGFloat = 200.0
     private let buttonWidth: CGFloat = 200.0
@@ -102,9 +102,17 @@ extension BCEntryViewController: ViewControllerUpdateDelegate {
         //also, can render a new view on the first block and keep updating table view cell, As I am implementing pull to refresh on a new page, which also conveyed same logic so not making this flow
         switch state {
         case .loadSuccess:
-            break;
+            //show detail view
+            showBlockList()
+        case .loadFail(let error):
+            //if have some data show the data with error message to the footer, show detail view
+            viewPresenter.hasBlockCollection ? showBlockList(errorMessage: error) : updateView()
         default:
             updateView()
         }
+    }
+    
+    private func showBlockList(errorMessage: String? = nil) {
+        
     }
 }

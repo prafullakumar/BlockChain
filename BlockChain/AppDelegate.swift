@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Moya
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         window = UIWindow()
         let entryViewController = BCEntryViewController()
-        entryViewController.viewPresenter  = BCEntryViewModel(delgate: entryViewController)
+        entryViewController.viewPresenter  = BCEntryViewModel(networking: Networking(provider: MoyaProvider<BlockAPI>()), delgate: entryViewController)
         window?.rootViewController = UINavigationController.init(rootViewController: entryViewController)
         window?.makeKeyAndVisible()
         return true

@@ -12,7 +12,7 @@ import Foundation
 enum ViewModelState {
     case loading(String)
     case loadSuccess
-    case loadFail(Error)
+    case loadFail(String)
     case unknown
 }
 
@@ -22,6 +22,7 @@ protocol BCEntryViewPresenter: class {
     var buttonTitle: String { get }
     var status: String { get }
     var delegate: ViewControllerUpdateDelegate? { get }
+    var hasBlockCollection: Bool { get }
     func fetchLatestBlocks()
 }
 
@@ -32,6 +33,11 @@ protocol  ViewControllerUpdateDelegate: class {
 
 final class BCEntryViewModel: BCEntryViewPresenter {
     weak var delegate: ViewControllerUpdateDelegate?
+    var dataModel: [BlockDataModel] = []
+    
+    var info: BlockInfo?
+    
+    private let store: BCStore
     private let maxBlock = 20
     private var state: ViewModelState = .unknown {
         didSet {
@@ -41,6 +47,10 @@ final class BCEntryViewModel: BCEntryViewPresenter {
     
     var title: String {
         return "BlocIO"
+    }
+    
+    var hasBlockCollection: Bool {
+        return dataModel.count != 0
     }
         
     var buttonTitle: String {
@@ -61,7 +71,7 @@ final class BCEntryViewModel: BCEntryViewPresenter {
         case .loadSuccess:
             return ""
         case .loadFail(let error):
-            return error.localizedDescription
+            return error
         case .loading(let status):
             return status
         default:
@@ -70,8 +80,9 @@ final class BCEntryViewModel: BCEntryViewPresenter {
     }
     
     
-    required init(delgate: ViewControllerUpdateDelegate) {
+    required init(networking: Networking, delgate: ViewControllerUpdateDelegate) {
         self.delegate = delgate
+        self.store = BCStore(networking: networking)
     }
     
     func fetchLatestBlocks() {
@@ -79,16 +90,49 @@ final class BCEntryViewModel: BCEntryViewPresenter {
         case .loading:
             return
         default:
-            state = .loading("0/\(maxBlock) Downloaded")
-//            store.fetchNextPage { (result) in
-//                switch result {
-//                case .success(let data):
-//                    self.dataModel.append(contentsOf: data)
-//                    self.state = .loadSuccess
-//                case .failure(let error):
-//                    self.state = .loadFail(error)
-//                }
-//            }
+            state = .loading(getLoadingMessage())
+            fetchInfo()
         }
+    }
+    
+    private func fetchInfo() {
+        store.getInfo { [weak self] (result) in
+            guard let self = self else { return }
+            switch result {
+            case .success(let data):
+                self.info = data
+                self.fetchBlocks()
+            case .failure(let error):
+                self.state = .loadFail(error)
+            }
+        }
+    }
+    
+    private func fetchBlocks(){
+        guard dataModel.count < maxBlock else {
+            self.state = .loadSuccess
+            return
+        }
+        
+        guard let blockId = dataModel.last?.previous ?? info?.headBlockID else {
+            self.state = .loadFail("No valid block found.")
+            return
+        }
+        
+        store.getBlock(blockId: blockId) { [weak self] (result) in
+            guard let self = self else { return }
+            switch result {
+            case .success(let data):
+                self.dataModel.append(data)
+                self.state = .loading(self.getLoadingMessage())
+                self.fetchBlocks()
+            case .failure(let error):
+                self.state = .loadFail(error)
+            }
+        }
+    }
+    
+    private func getLoadingMessage() -> String {
+        return "\(self.dataModel.count)/\(self.maxBlock) Downloaded"
     }
 }

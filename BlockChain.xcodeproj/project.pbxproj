@@ -8,14 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		2D34B55C47FD80B7A8A97FE9 /* Pods_BlockChain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEE8F04D5A36B2323FF8FB84 /* Pods_BlockChain.framework */; };
-		77229B56240A38530000EDCE /* BCErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77229B55240A38530000EDCE /* BCErrorView.swift */; };
-		77229B58240A38AD0000EDCE /* UIViewController+ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77229B57240A38AD0000EDCE /* UIViewController+ActivityIndicator.swift */; };
 		77229B5B240A39A20000EDCE /* UIView+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77229B5A240A39A20000EDCE /* UIView+Extention.swift */; };
 		77229B5D240A39F20000EDCE /* ScrollableStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77229B5C240A39F20000EDCE /* ScrollableStackView.swift */; };
 		77229B5F240A47ED0000EDCE /* BCEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77229B5E240A47ED0000EDCE /* BCEntryViewController.swift */; };
 		77229B61240A55100000EDCE /* BCEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77229B60240A55100000EDCE /* BCEntryViewModel.swift */; };
+		77229B64240A6DC20000EDCE /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77229B63240A6DC20000EDCE /* API.swift */; };
+		77229B67240A714A0000EDCE /* BlockInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77229B66240A714A0000EDCE /* BlockInfo.swift */; };
+		77229B69240A71D10000EDCE /* BlockDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77229B68240A71D10000EDCE /* BlockDataModel.swift */; };
+		77229B6B240A76130000EDCE /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77229B6A240A76130000EDCE /* Networking.swift */; };
+		77229B6D240A7F7C0000EDCE /* ErrorDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77229B6C240A7F7C0000EDCE /* ErrorDataModel.swift */; };
+		77229B70240A9C1E0000EDCE /* BCStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77229B6F240A9C1E0000EDCE /* BCStore.swift */; };
+		77229B72240AAB050000EDCE /* BCListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77229B71240AAB050000EDCE /* BCListViewModel.swift */; };
 		773B5A87240A263300DD00AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773B5A86240A263300DD00AC /* AppDelegate.swift */; };
-		773B5A8B240A263300DD00AC /* BCRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773B5A8A240A263300DD00AC /* BCRootViewController.swift */; };
+		773B5A8B240A263300DD00AC /* BCListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773B5A8A240A263300DD00AC /* BCListViewController.swift */; };
 		773B5A90240A263400DD00AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 773B5A8F240A263400DD00AC /* Assets.xcassets */; };
 		773B5A93240A263400DD00AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 773B5A91240A263400DD00AC /* LaunchScreen.storyboard */; };
 		773B5A9E240A263400DD00AC /* BlockChainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773B5A9D240A263400DD00AC /* BlockChainTests.swift */; };
@@ -35,15 +40,20 @@
 /* Begin PBXFileReference section */
 		468A6C312AF093BE6CBB956B /* Pods-BlockChain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlockChain.debug.xcconfig"; path = "Target Support Files/Pods-BlockChain/Pods-BlockChain.debug.xcconfig"; sourceTree = "<group>"; };
 		60C8A2714C37C29F8D054EAC /* Pods-BlockChain.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlockChain.release.xcconfig"; path = "Target Support Files/Pods-BlockChain/Pods-BlockChain.release.xcconfig"; sourceTree = "<group>"; };
-		77229B55240A38530000EDCE /* BCErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCErrorView.swift; sourceTree = "<group>"; };
-		77229B57240A38AD0000EDCE /* UIViewController+ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ActivityIndicator.swift"; sourceTree = "<group>"; };
 		77229B5A240A39A20000EDCE /* UIView+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extention.swift"; sourceTree = "<group>"; };
 		77229B5C240A39F20000EDCE /* ScrollableStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableStackView.swift; sourceTree = "<group>"; };
 		77229B5E240A47ED0000EDCE /* BCEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCEntryViewController.swift; sourceTree = "<group>"; };
 		77229B60240A55100000EDCE /* BCEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCEntryViewModel.swift; sourceTree = "<group>"; };
+		77229B63240A6DC20000EDCE /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		77229B66240A714A0000EDCE /* BlockInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockInfo.swift; sourceTree = "<group>"; };
+		77229B68240A71D10000EDCE /* BlockDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockDataModel.swift; sourceTree = "<group>"; };
+		77229B6A240A76130000EDCE /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		77229B6C240A7F7C0000EDCE /* ErrorDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorDataModel.swift; sourceTree = "<group>"; };
+		77229B6F240A9C1E0000EDCE /* BCStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCStore.swift; sourceTree = "<group>"; };
+		77229B71240AAB050000EDCE /* BCListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCListViewModel.swift; sourceTree = "<group>"; };
 		773B5A83240A263300DD00AC /* BlockChain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlockChain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		773B5A86240A263300DD00AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		773B5A8A240A263300DD00AC /* BCRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCRootViewController.swift; sourceTree = "<group>"; };
+		773B5A8A240A263300DD00AC /* BCListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCListViewController.swift; sourceTree = "<group>"; };
 		773B5A8F240A263400DD00AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		773B5A92240A263400DD00AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		773B5A94240A263400DD00AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -79,19 +89,44 @@
 		77229B54240A37E20000EDCE /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				77229B55240A38530000EDCE /* BCErrorView.swift */,
-				77229B57240A38AD0000EDCE /* UIViewController+ActivityIndicator.swift */,
 				77229B5C240A39F20000EDCE /* ScrollableStackView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		77229B59240A39830000EDCE /* Autolayout */ = {
+		77229B59240A39830000EDCE /* Util */ = {
 			isa = PBXGroup;
 			children = (
 				77229B5A240A39A20000EDCE /* UIView+Extention.swift */,
 			);
-			path = Autolayout;
+			path = Util;
+			sourceTree = "<group>";
+		};
+		77229B62240A6DB20000EDCE /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				77229B63240A6DC20000EDCE /* API.swift */,
+				77229B6A240A76130000EDCE /* Networking.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		77229B65240A713C0000EDCE /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+				77229B66240A714A0000EDCE /* BlockInfo.swift */,
+				77229B68240A71D10000EDCE /* BlockDataModel.swift */,
+				77229B6C240A7F7C0000EDCE /* ErrorDataModel.swift */,
+			);
+			path = DataModels;
+			sourceTree = "<group>";
+		};
+		77229B6E240A9C0E0000EDCE /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				77229B6F240A9C1E0000EDCE /* BCStore.swift */,
+			);
+			path = Store;
 			sourceTree = "<group>";
 		};
 		773B5A7A240A263300DD00AC = {
@@ -117,10 +152,14 @@
 		773B5A85240A263300DD00AC /* BlockChain */ = {
 			isa = PBXGroup;
 			children = (
-				77229B59240A39830000EDCE /* Autolayout */,
+				77229B6E240A9C0E0000EDCE /* Store */,
+				77229B65240A713C0000EDCE /* DataModels */,
+				77229B62240A6DB20000EDCE /* Networking */,
+				77229B59240A39830000EDCE /* Util */,
 				77229B54240A37E20000EDCE /* Views */,
 				773B5A86240A263300DD00AC /* AppDelegate.swift */,
-				773B5A8A240A263300DD00AC /* BCRootViewController.swift */,
+				773B5A8A240A263300DD00AC /* BCListViewController.swift */,
+				77229B71240AAB050000EDCE /* BCListViewModel.swift */,
 				77229B5E240A47ED0000EDCE /* BCEntryViewController.swift */,
 				77229B60240A55100000EDCE /* BCEntryViewModel.swift */,
 				773B5A8F240A263400DD00AC /* Assets.xcassets */,
@@ -346,12 +385,17 @@
 			files = (
 				77229B5F240A47ED0000EDCE /* BCEntryViewController.swift in Sources */,
 				77229B5D240A39F20000EDCE /* ScrollableStackView.swift in Sources */,
-				773B5A8B240A263300DD00AC /* BCRootViewController.swift in Sources */,
+				773B5A8B240A263300DD00AC /* BCListViewController.swift in Sources */,
+				77229B6B240A76130000EDCE /* Networking.swift in Sources */,
 				77229B5B240A39A20000EDCE /* UIView+Extention.swift in Sources */,
 				77229B61240A55100000EDCE /* BCEntryViewModel.swift in Sources */,
-				77229B58240A38AD0000EDCE /* UIViewController+ActivityIndicator.swift in Sources */,
-				77229B56240A38530000EDCE /* BCErrorView.swift in Sources */,
+				77229B69240A71D10000EDCE /* BlockDataModel.swift in Sources */,
+				77229B67240A714A0000EDCE /* BlockInfo.swift in Sources */,
+				77229B64240A6DC20000EDCE /* API.swift in Sources */,
 				773B5A87240A263300DD00AC /* AppDelegate.swift in Sources */,
+				77229B6D240A7F7C0000EDCE /* ErrorDataModel.swift in Sources */,
+				77229B72240AAB050000EDCE /* BCListViewModel.swift in Sources */,
+				77229B70240A9C1E0000EDCE /* BCStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
