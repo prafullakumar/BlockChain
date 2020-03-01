@@ -18,7 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         window = UIWindow()
         let entryViewController = BCEntryViewController()
-        entryViewController.viewPresenter  = BCEntryViewModel(networking: Networking(provider: MoyaProvider<BlockAPI>()), delgate: entryViewController)
+        
+        // switch between store to use API or EosioSwift Pod  
+        let store = BCNetworkingStore.init(networking: Networking.init(provider: MoyaProvider<BlockAPI>()))
+        
+        entryViewController.viewPresenter  = BCEntryViewModel(store: store, delgate: entryViewController)
         window?.rootViewController = UINavigationController.init(rootViewController: entryViewController)
         window?.makeKeyAndVisible()
         return true

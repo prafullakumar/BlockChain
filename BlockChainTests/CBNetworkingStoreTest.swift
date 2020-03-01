@@ -11,7 +11,7 @@ import XCTest
 import Moya
 @testable import BlockChain
 
-class CBStoreTest: XCTestCase {
+class CBNetworkingStoreTest: XCTestCase {
     let networking = Networking.init(provider: MoyaProvider<BlockAPI>(stubClosure: MoyaProvider.immediatelyStub))
     
     override func setUp() {
@@ -23,7 +23,7 @@ class CBStoreTest: XCTestCase {
     }
     
     func testInfo() {
-        let store = BCStore.init(networking: networking)
+        let store = BCNetworkingStore.init(networking: networking)
         let expectation = self.expectation(description: "Stub should work")
         store.getInfo { (result) in
             switch result {
@@ -38,7 +38,7 @@ class CBStoreTest: XCTestCase {
     }
     
     func testBlock() {
-        let store = BCStore.init(networking: networking)
+        let store = BCNetworkingStore.init(networking: networking)
         let expectation = self.expectation(description: "Stub should work")
         store.getBlock(blockId: "066d5ea6dc80d844c83b47396c47be178f679a001049ccc8f2c3cee1d90d9fdc") { (result) in
             switch result {

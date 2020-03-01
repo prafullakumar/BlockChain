@@ -22,7 +22,7 @@ protocol BCEntryViewPresenter: class {
     var title: String { get }
     var buttonTitle: String { get }
     var status: String { get }
-    var store: BCStore { get }
+    var store: BCStoreProtocol { get }
     var dataModel: [BlockDataModel] { get }
     var delegate: ViewControllerUpdateDelegate? { get }
     var hasBlockCollection: Bool { get }
@@ -41,7 +41,7 @@ final class BCEntryViewModel: BCEntryViewPresenter {
     
     var info: BlockInfo?
     
-    let store: BCStore
+    let store: BCStoreProtocol
     
     private var state: ViewModelState = .unknown {
         didSet {
@@ -84,9 +84,9 @@ final class BCEntryViewModel: BCEntryViewPresenter {
     }
     
     
-    required init(networking: Networking, delgate: ViewControllerUpdateDelegate) {
+    required init(store: BCStoreProtocol, delgate: ViewControllerUpdateDelegate) {
         self.delegate = delgate
-        self.store = BCStore(networking: networking)
+        self.store = store
     }
     
     func fetchLatestBlocks() {
