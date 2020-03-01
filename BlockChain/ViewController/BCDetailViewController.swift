@@ -34,13 +34,13 @@ final class BCDetailViewController: UIViewController {
         scrollableStackView.stackView.alignment = .center
         scrollableStackView.scrollView.showsVerticalScrollIndicator = false
         scrollableStackView.scrollView.alwaysBounceVertical = false
-        scrollableStackView.bindFrameTo(view: self.view)
-        scrollableStackView.scrollView.contentInset = UIEdgeInsets(top: ScrollableStackView.Constants.topPadding, left: 0, bottom: 0, right: 0)
+        scrollableStackView.bindFrameTo(view: self.view, padding: ScrollableStackView.Constants.padding)
+        scrollableStackView.scrollView.contentInset = UIEdgeInsets(top: ScrollableStackView.Constants.padding, left: 0, bottom: 0, right: 0)
         return scrollableStackView
     }()
     
     
-    var rawJsonLabel: UILabel?
+    var rawJsonTextView: UITextView?
     
     lazy var segmentControll: UISegmentedControl = {
         let segment = UISegmentedControl(items: [ViewType.hide.stringRepresentation, ViewType.show.stringRepresentation])
@@ -67,8 +67,19 @@ final class BCDetailViewController: UIViewController {
         scrollableStackView.loadLabel(withString: "producer signature:",  font: UIFont.systemFont(ofSize: 18, weight: .bold))
         scrollableStackView.loadLabel(withString: viewPresenter.signature)
         scrollableStackView.loadView(view: self.segmentControll)
-        rawJsonLabel = scrollableStackView.loadLabel(withString: viewPresenter.rawJson)
-        onChange()
+        
+        //too big json - moving feth op to background
+        DispatchQueue.global(qos: .background).async { [weak self] in
+            guard let self = self else { return }
+            let data = self.viewPresenter.rawJson
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                self.rawJsonTextView = self.scrollableStackView.loadTextView(withString: data)
+                self.onChange()
+            }
+        }
+        
+      
     }
     
     
@@ -76,12 +87,11 @@ final class BCDetailViewController: UIViewController {
     @objc func onChange() {
         switch ViewType.init(rawValue: segmentControll.selectedSegmentIndex) {
         case .hide?:
-            rawJsonLabel?.isHidden = true
+            rawJsonTextView?.isHidden = true
         case .show?:
-            rawJsonLabel?.isHidden = false
+            rawJsonTextView?.isHidden = false
         case .none:
             break;
         }
-        rawJsonLabel?.layoutIfNeeded()
     }
 }

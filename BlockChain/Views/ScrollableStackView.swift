@@ -12,11 +12,7 @@ import UIKit
 final class ScrollableStackView: UIView {
     
     struct Constants {
-        static let topPadding: CGFloat = 18
-        static let textPaddingToBorder: CGFloat = 25
-        static let imagePaddingToBorder: CGFloat = 15
-        static let buttonPaddingToBorder: CGFloat = 25
-        static let buttonPaddingToBottom: CGFloat = 30
+        static let padding: CGFloat = 18
         static let defaultFontSize: CGFloat = 14
         static let buttonTextInsets = UIEdgeInsets(top: 10, left: 25, bottom: 10, right: 25)
         static let compareViewHeight: CGFloat = 95
@@ -37,7 +33,7 @@ final class ScrollableStackView: UIView {
         instance.translatesAutoresizingMaskIntoConstraints = false
         instance.axis = .vertical
         instance.spacing = self.spacing
-        instance.distribution = .equalSpacing
+        instance.distribution = .fill
         return instance
     }()
     
@@ -86,7 +82,7 @@ final class ScrollableStackView: UIView {
 //Mark - ADD Views
 extension ScrollableStackView {
     
-   @discardableResult  public func loadLabel(withString text: String, padding: CGFloat = Constants.textPaddingToBorder,
+   @discardableResult  public func loadLabel(withString text: String,
                           font: UIFont = UIFont.systemFont(ofSize: 14),
                           textAlignment: NSTextAlignment = .left) -> UILabel {
         let label = UILabel()
@@ -95,12 +91,29 @@ extension ScrollableStackView {
         label.text = text
         label.textAlignment = textAlignment
         label.textColor = UIColor.black
-        let textWidth = UIScreen.main.bounds.size.width - padding*2
+        let textWidth = UIScreen.main.bounds.size.width - Constants.padding*2
         let size = label.sizeThatFits(CGSize(width: textWidth, height: CGFloat.greatestFiniteMagnitude))
         label.heightAnchor.constraint(equalToConstant: size.height).isActive = true
         label.widthAnchor.constraint(equalToConstant: textWidth).isActive = true
         self.stackView.addArrangedSubview(label)
         return label
+    }
+    
+    @discardableResult  public func loadTextView(withString text: String,
+                                              font: UIFont = UIFont.systemFont(ofSize: 14),
+                                              textAlignment: NSTextAlignment = .left) -> UITextView {
+        let textView = UITextView()
+        textView.font = font
+        textView.text = text
+        textView.textAlignment = textAlignment
+        textView.textColor = UIColor.black
+        textView.isScrollEnabled = false //already in stcak view
+        let textWidth = UIScreen.main.bounds.size.width - Constants.padding*2
+        let size = textView.sizeThatFits(CGSize(width: textWidth, height: CGFloat.greatestFiniteMagnitude))
+        textView.heightAnchor.constraint(equalToConstant: size.height).isActive = true
+        textView.widthAnchor.constraint(equalToConstant: textWidth).isActive = true
+        self.stackView.addArrangedSubview(textView)
+        return textView
     }
     
     public func loadView(view: UIView) {
