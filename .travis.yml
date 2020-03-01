@@ -1,0 +1,8 @@
+os: osx
+osx_image: xcode10.3
+language: swift
+podfile: Podfile
+bundle exec pod install
+install: make get-deps
+script xcodebuild clean build test -workspace "BlockChain.xcworkspace" -scheme "BlockChain" -sdk "iphonesimulator" -destination "platform=iOS Simulator,OS=12.4,name=iPhone 8" ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO 
+
