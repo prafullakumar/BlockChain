@@ -8,6 +8,7 @@
 
 import Foundation
 
+let maxBlock = 20
 
 enum ViewModelState {
     case loading(String)
@@ -21,9 +22,12 @@ protocol BCEntryViewPresenter: class {
     var title: String { get }
     var buttonTitle: String { get }
     var status: String { get }
+    var store: BCStore { get }
+    var dataModel: [BlockDataModel] { get }
     var delegate: ViewControllerUpdateDelegate? { get }
     var hasBlockCollection: Bool { get }
     func fetchLatestBlocks()
+    
 }
 
 protocol  ViewControllerUpdateDelegate: class {
@@ -33,12 +37,12 @@ protocol  ViewControllerUpdateDelegate: class {
 
 final class BCEntryViewModel: BCEntryViewPresenter {
     weak var delegate: ViewControllerUpdateDelegate?
-    var dataModel: [BlockDataModel] = []
+    private(set) var dataModel: [BlockDataModel] = []
     
     var info: BlockInfo?
     
-    private let store: BCStore
-    private let maxBlock = 20
+    let store: BCStore
+    
     private var state: ViewModelState = .unknown {
         didSet {
             delegate?.viewModel(didUpdateState: state)
@@ -133,6 +137,7 @@ final class BCEntryViewModel: BCEntryViewPresenter {
     }
     
     private func getLoadingMessage() -> String {
-        return "\(self.dataModel.count)/\(self.maxBlock) Downloaded"
+        return "\(self.dataModel.count)/\(maxBlock) Downloaded"
     }
+    
 }

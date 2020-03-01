@@ -41,8 +41,12 @@ struct BlockInfo: Codable {
 
 extension BlockInfo {
     init?(data: Data) {
-        guard let me = try? JSONDecoder().decode(BlockInfo.self, from: data) else { return nil }
-        self = me
+        do {
+            self = try JSONDecoder().decode(BlockInfo.self, from: data)
+        } catch {
+            print(error.localizedDescription)
+            return nil
+        }
     }
 
     init?(_ json: String, using encoding: String.Encoding = .utf8) {

@@ -39,8 +39,12 @@ struct ErrorDataModel: Codable {
 
 extension ErrorDataModel {
     init?(data: Data) {
-        guard let me = try? JSONDecoder().decode(ErrorDataModel.self, from: data) else { return nil }
-        self = me
+        do {
+            self = try JSONDecoder().decode(ErrorDataModel.self, from: data)
+        } catch {
+            print(error.localizedDescription)
+            return nil
+        }
     }
 
     init?(_ json: String, using encoding: String.Encoding = .utf8) {
@@ -60,8 +64,12 @@ extension ErrorDataModel {
 
 extension ErrorDataModel.Error {
     init?(data: Data) {
-        guard let me = try? JSONDecoder().decode(ErrorDataModel.Error.self, from: data) else { return nil }
-        self = me
+        do {
+            self = try JSONDecoder().decode(ErrorDataModel.Error.self, from: data)
+        } catch {
+            print(error.localizedDescription)
+            return nil
+        }
     }
 
     init?(_ json: String, using encoding: String.Encoding = .utf8) {
@@ -81,8 +89,12 @@ extension ErrorDataModel.Error {
 
 extension ErrorDataModel.Detail {
     init?(data: Data) {
-        guard let me = try? JSONDecoder().decode(ErrorDataModel.Detail.self, from: data) else { return nil }
-        self = me
+        do {
+            self = try JSONDecoder().decode(ErrorDataModel.Detail.self, from: data)
+        } catch {
+            print(error.localizedDescription)
+            return nil
+        }
     }
 
     init?(_ json: String, using encoding: String.Encoding = .utf8) {

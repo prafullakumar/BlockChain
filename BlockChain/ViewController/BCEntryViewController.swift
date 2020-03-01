@@ -8,10 +8,6 @@
 
 import UIKit
 
-
-
-
-
 final class BCEntryViewController: UIViewController {
     
     private let buttonHeight: CGFloat = 200.0
@@ -104,15 +100,19 @@ extension BCEntryViewController: ViewControllerUpdateDelegate {
         case .loadSuccess:
             //show detail view
             showBlockList()
-        case .loadFail(let error):
-            //if have some data show the data with error message to the footer, show detail view
-            viewPresenter.hasBlockCollection ? showBlockList(errorMessage: error) : updateView()
+        case .loadFail:
+            //if have some data show the list
+            viewPresenter.hasBlockCollection ? showBlockList() : updateView()
         default:
             updateView()
         }
     }
     
-    private func showBlockList(errorMessage: String? = nil) {
-        
+    private func showBlockList() {
+        let vc = BCListViewController()
+        vc.viewPresenter = BCListViewModel(dataModel: viewPresenter.dataModel,
+                                           store: viewPresenter.store,
+                                           delegate: vc)
+        self.navigationController?.setViewControllers([vc], animated: false)
     }
 }

@@ -86,9 +86,9 @@ final class ScrollableStackView: UIView {
 //Mark - ADD Views
 extension ScrollableStackView {
     
-    public func loadLabel(withString text: String, padding: CGFloat = Constants.textPaddingToBorder,
+   @discardableResult  public func loadLabel(withString text: String, padding: CGFloat = Constants.textPaddingToBorder,
                           font: UIFont = UIFont.systemFont(ofSize: 14),
-                          textAlignment: NSTextAlignment = .left) {
+                          textAlignment: NSTextAlignment = .left) -> UILabel {
         let label = UILabel()
         label.numberOfLines = 0
         label.font = font
@@ -100,5 +100,10 @@ extension ScrollableStackView {
         label.heightAnchor.constraint(equalToConstant: size.height).isActive = true
         label.widthAnchor.constraint(equalToConstant: textWidth).isActive = true
         self.stackView.addArrangedSubview(label)
+        return label
+    }
+    
+    public func loadView(view: UIView) {
+        self.stackView.addArrangedSubview(view)
     }
 }

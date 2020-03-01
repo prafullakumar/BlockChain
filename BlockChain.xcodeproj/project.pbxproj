@@ -24,6 +24,9 @@
 		773B5A90240A263400DD00AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 773B5A8F240A263400DD00AC /* Assets.xcassets */; };
 		773B5A93240A263400DD00AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 773B5A91240A263400DD00AC /* LaunchScreen.storyboard */; };
 		773B5A9E240A263400DD00AC /* BlockChainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773B5A9D240A263400DD00AC /* BlockChainTests.swift */; };
+		7765D43A240AD13C00B1B20D /* JsonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7765D439240AD13C00B1B20D /* JsonHelper.swift */; };
+		7765D43E240B678E00B1B20D /* BCDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7765D43D240B678E00B1B20D /* BCDetailViewController.swift */; };
+		7765D442240B75A900B1B20D /* BCDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7765D441240B75A900B1B20D /* BCDetailViewModel.swift */; };
 		F456F4489A1ABC1A943ACB53 /* Pods_BlockChainTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA773B039C9BC56F01470E7E /* Pods_BlockChainTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +63,9 @@
 		773B5A99240A263400DD00AC /* BlockChainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlockChainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		773B5A9D240A263400DD00AC /* BlockChainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockChainTests.swift; sourceTree = "<group>"; };
 		773B5A9F240A263400DD00AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7765D439240AD13C00B1B20D /* JsonHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonHelper.swift; sourceTree = "<group>"; };
+		7765D43D240B678E00B1B20D /* BCDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCDetailViewController.swift; sourceTree = "<group>"; };
+		7765D441240B75A900B1B20D /* BCDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCDetailViewModel.swift; sourceTree = "<group>"; };
 		D481977B65D31645A7FA0BB9 /* Pods-BlockChainTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlockChainTests.debug.xcconfig"; path = "Target Support Files/Pods-BlockChainTests/Pods-BlockChainTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DA773B039C9BC56F01470E7E /* Pods_BlockChainTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlockChainTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEE8F04D5A36B2323FF8FB84 /* Pods_BlockChain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlockChain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				77229B66240A714A0000EDCE /* BlockInfo.swift */,
+				7765D439240AD13C00B1B20D /* JsonHelper.swift */,
 				77229B68240A71D10000EDCE /* BlockDataModel.swift */,
 				77229B6C240A7F7C0000EDCE /* ErrorDataModel.swift */,
 			);
@@ -158,10 +165,8 @@
 				77229B59240A39830000EDCE /* Util */,
 				77229B54240A37E20000EDCE /* Views */,
 				773B5A86240A263300DD00AC /* AppDelegate.swift */,
-				773B5A8A240A263300DD00AC /* BCListViewController.swift */,
-				77229B71240AAB050000EDCE /* BCListViewModel.swift */,
-				77229B5E240A47ED0000EDCE /* BCEntryViewController.swift */,
-				77229B60240A55100000EDCE /* BCEntryViewModel.swift */,
+				7765D43C240ADDDA00B1B20D /* ViewModel */,
+				7765D43B240ADDC700B1B20D /* ViewController */,
 				773B5A8F240A263400DD00AC /* Assets.xcassets */,
 				773B5A91240A263400DD00AC /* LaunchScreen.storyboard */,
 				773B5A94240A263400DD00AC /* Info.plist */,
@@ -176,6 +181,26 @@
 				773B5A9F240A263400DD00AC /* Info.plist */,
 			);
 			path = BlockChainTests;
+			sourceTree = "<group>";
+		};
+		7765D43B240ADDC700B1B20D /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				773B5A8A240A263300DD00AC /* BCListViewController.swift */,
+				77229B5E240A47ED0000EDCE /* BCEntryViewController.swift */,
+				7765D43D240B678E00B1B20D /* BCDetailViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		7765D43C240ADDDA00B1B20D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				77229B71240AAB050000EDCE /* BCListViewModel.swift */,
+				77229B60240A55100000EDCE /* BCEntryViewModel.swift */,
+				7765D441240B75A900B1B20D /* BCDetailViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		C5CAFC0CB893E4FA5573D04F /* Frameworks */ = {
@@ -386,12 +411,15 @@
 				77229B5F240A47ED0000EDCE /* BCEntryViewController.swift in Sources */,
 				77229B5D240A39F20000EDCE /* ScrollableStackView.swift in Sources */,
 				773B5A8B240A263300DD00AC /* BCListViewController.swift in Sources */,
+				7765D43A240AD13C00B1B20D /* JsonHelper.swift in Sources */,
 				77229B6B240A76130000EDCE /* Networking.swift in Sources */,
 				77229B5B240A39A20000EDCE /* UIView+Extention.swift in Sources */,
+				7765D442240B75A900B1B20D /* BCDetailViewModel.swift in Sources */,
 				77229B61240A55100000EDCE /* BCEntryViewModel.swift in Sources */,
 				77229B69240A71D10000EDCE /* BlockDataModel.swift in Sources */,
 				77229B67240A714A0000EDCE /* BlockInfo.swift in Sources */,
 				77229B64240A6DC20000EDCE /* API.swift in Sources */,
+				7765D43E240B678E00B1B20D /* BCDetailViewController.swift in Sources */,
 				773B5A87240A263300DD00AC /* AppDelegate.swift in Sources */,
 				77229B6D240A7F7C0000EDCE /* ErrorDataModel.swift in Sources */,
 				77229B72240AAB050000EDCE /* BCListViewModel.swift in Sources */,
