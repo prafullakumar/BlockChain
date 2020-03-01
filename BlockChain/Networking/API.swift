@@ -52,15 +52,22 @@ extension BlockAPI: TargetType {
     }
     
     var sampleData: Data {
-//        switch self {
-//        case .recommended, .latest:
-//            if let filepath = Bundle.main.path(forResource: "stub", ofType: "json") {
-//                return try! Data(contentsOf: URL(fileURLWithPath: filepath)) // stub shold crash on exection for better debugability
-//            } else {
-                return Data()
-//            }
-//        }
+        switch self {
+        case .info:
+           return load(resource: "info")
+        case .block:
+           return load(resource: "block")
+        }
     }
+    
+    private func load(resource: String) -> Data {
+        if let filepath = Bundle.main.path(forResource: resource, ofType: "json") {
+            return try! Data(contentsOf: URL(fileURLWithPath: filepath)) // stub shold crash on exection for better debugability
+        } else {
+            return Data()
+        }
+    }
+    
     
     var task: Task {
         switch self {
