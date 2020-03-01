@@ -29,6 +29,8 @@
 		7765D442240B75A900B1B20D /* BCDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7765D441240B75A900B1B20D /* BCDetailViewModel.swift */; };
 		7765D445240B89BE00B1B20D /* info.json in Resources */ = {isa = PBXBuildFile; fileRef = 7765D444240B89BE00B1B20D /* info.json */; };
 		7765D448240B8AC500B1B20D /* NetworkingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7765D447240B8AC500B1B20D /* NetworkingTest.swift */; };
+		7765D44A240B8C3F00B1B20D /* CBStoreTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7765D449240B8C3F00B1B20D /* CBStoreTest.swift */; };
+		7765D44B240B8DFE00B1B20D /* block.json in Resources */ = {isa = PBXBuildFile; fileRef = 7765D446240B89CD00B1B20D /* block.json */; };
 		F456F4489A1ABC1A943ACB53 /* Pods_BlockChainTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA773B039C9BC56F01470E7E /* Pods_BlockChainTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,8 +71,9 @@
 		7765D43D240B678E00B1B20D /* BCDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCDetailViewController.swift; sourceTree = "<group>"; };
 		7765D441240B75A900B1B20D /* BCDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCDetailViewModel.swift; sourceTree = "<group>"; };
 		7765D444240B89BE00B1B20D /* info.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = info.json; sourceTree = "<group>"; };
-		7765D446240B89CD00B1B20D /* Block.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Block.json; sourceTree = "<group>"; };
+		7765D446240B89CD00B1B20D /* block.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = block.json; sourceTree = "<group>"; };
 		7765D447240B8AC500B1B20D /* NetworkingTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingTest.swift; sourceTree = "<group>"; };
+		7765D449240B8C3F00B1B20D /* CBStoreTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBStoreTest.swift; sourceTree = "<group>"; };
 		D481977B65D31645A7FA0BB9 /* Pods-BlockChainTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlockChainTests.debug.xcconfig"; path = "Target Support Files/Pods-BlockChainTests/Pods-BlockChainTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DA773B039C9BC56F01470E7E /* Pods_BlockChainTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlockChainTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEE8F04D5A36B2323FF8FB84 /* Pods_BlockChain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlockChain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -185,6 +188,7 @@
 			children = (
 				773B5A9D240A263400DD00AC /* BlockChainTests.swift */,
 				7765D447240B8AC500B1B20D /* NetworkingTest.swift */,
+				7765D449240B8C3F00B1B20D /* CBStoreTest.swift */,
 				773B5A9F240A263400DD00AC /* Info.plist */,
 			);
 			path = BlockChainTests;
@@ -214,7 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				7765D444240B89BE00B1B20D /* info.json */,
-				7765D446240B89CD00B1B20D /* Block.json */,
+				7765D446240B89CD00B1B20D /* block.json */,
 			);
 			path = Stub;
 			sourceTree = "<group>";
@@ -325,6 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				773B5A93240A263400DD00AC /* LaunchScreen.storyboard in Resources */,
+				7765D44B240B8DFE00B1B20D /* block.json in Resources */,
 				7765D445240B89BE00B1B20D /* info.json in Resources */,
 				773B5A90240A263400DD00AC /* Assets.xcassets in Resources */,
 			);
@@ -449,6 +454,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				773B5A9E240A263400DD00AC /* BlockChainTests.swift in Sources */,
+				7765D44A240B8C3F00B1B20D /* CBStoreTest.swift in Sources */,
 				7765D448240B8AC500B1B20D /* NetworkingTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
