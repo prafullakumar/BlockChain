@@ -1,5 +1,5 @@
 //
-//  CBStoreTest.swift
+//  CBEosioStoreTest.swift
 //  BlockChainTests
 //
 //  Created by prafull kumar on 1/3/20.
@@ -8,11 +8,12 @@
 
 import Foundation
 import XCTest
-import Moya
+import EosioSwift
 @testable import BlockChain
 
-class CBStoreTest: XCTestCase {
-    let networking = Networking.init(provider: MoyaProvider<BlockAPI>(stubClosure: MoyaProvider.immediatelyStub))
+class CBEosioStoreTest: XCTestCase {
+
+    let provider = EosioRpcProvider(endpoint: URL(string: "https://api.eosnewyork.io")!)
     
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -23,7 +24,7 @@ class CBStoreTest: XCTestCase {
     }
     
     func testInfo() {
-        let store = BCStore.init(networking: networking)
+        let store = BCEosioStore.init(provider: provider)
         let expectation = self.expectation(description: "Stub should work")
         store.getInfo { (result) in
             switch result {
@@ -38,7 +39,7 @@ class CBStoreTest: XCTestCase {
     }
     
     func testBlock() {
-        let store = BCStore.init(networking: networking)
+        let store = BCEosioStore.init(provider: provider)
         let expectation = self.expectation(description: "Stub should work")
         store.getBlock(blockId: "066d5ea6dc80d844c83b47396c47be178f679a001049ccc8f2c3cee1d90d9fdc") { (result) in
             switch result {

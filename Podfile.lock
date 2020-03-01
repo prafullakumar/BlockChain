@@ -1,26 +1,46 @@
 PODS:
   - Alamofire (4.9.1)
+  - BigInt (5.0.0)
+  - EosioSwift (0.2.1):
+    - BigInt (~> 5.0)
+    - PromiseKit (~> 6.8)
   - Moya (13.0.1):
     - Moya/Core (= 13.0.1)
   - Moya/Core (13.0.1):
     - Alamofire (~> 4.1)
     - Result (~> 4.1)
+  - PromiseKit (6.13.1):
+    - PromiseKit/CorePromise (= 6.13.1)
+    - PromiseKit/Foundation (= 6.13.1)
+    - PromiseKit/UIKit (= 6.13.1)
+  - PromiseKit/CorePromise (6.13.1)
+  - PromiseKit/Foundation (6.13.1):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (6.13.1):
+    - PromiseKit/CorePromise
   - Result (4.1.0)
 
 DEPENDENCIES:
+  - EosioSwift (~> 0.2.1)
   - Moya
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - BigInt
+    - EosioSwift
     - Moya
+    - PromiseKit
     - Result
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  BigInt: 74b4d88367b0e819d9f77393549226d36faeb0d8
+  EosioSwift: 21ca0d61e7928a982a64c82b623e7342d7dd86dc
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
+  PromiseKit: 28fda91c973cc377875d8c0ea4f973013c05b6db
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
 
-PODFILE CHECKSUM: 97165bb4293dad7c8232e53595acaaaace495a3f
+PODFILE CHECKSUM: 6e7358cc9b2d3d832e3143a3af8eefbd15352c34
 
 COCOAPODS: 1.8.4

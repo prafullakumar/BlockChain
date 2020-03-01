@@ -53,11 +53,11 @@ final class BCListViewModel: BCListViewPresenter {
     
     var dataModel: [BlockDataModel]
     var axillaryDataModel: [BlockDataModel] = []
-    let store: BCStore
+    let store: BCStoreProtocol
     weak var delegate: ViewControllerUpdateDelegate?
     
     init(dataModel: [BlockDataModel],
-         store: BCStore,
+         store: BCStoreProtocol,
          delegate: ViewControllerUpdateDelegate?) {
         
         self.dataModel = dataModel

@@ -6,11 +6,13 @@ target 'BlockChain' do
   use_frameworks!
 
   # Pods for BlockChain
-  pod ‘Moya’
+  pod "Moya"
+  pod "EosioSwift", "~> 0.2.1"
 
   target 'BlockChainTests' do
     inherit! :search_paths
-    pod ‘Moya’
+    pod "Moya"
+    pod "EosioSwift", "~> 0.2.1"
     # Pods for testing
   end
 

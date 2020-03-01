@@ -8,6 +8,7 @@
 
 import UIKit
 import Moya
+import EosioSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,7 +19,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         window = UIWindow()
         let entryViewController = BCEntryViewController()
-        entryViewController.viewPresenter  = BCEntryViewModel(networking: Networking(provider: MoyaProvider<BlockAPI>()), delgate: entryViewController)
+        
+        // switch between store to use API or EosioSwift Pod
+        
+//        let store = BCNetworkingStore.init(networking: Networking.init(provider: MoyaProvider<BlockAPI>()))
+        let store = BCEosioStore(provider: EosioRpcProvider(endpoint: URL(string: "https://api.eosnewyork.io")!))
+        entryViewController.viewPresenter  = BCEntryViewModel(store: store, delgate: entryViewController)
         window?.rootViewController = UINavigationController.init(rootViewController: entryViewController)
         window?.makeKeyAndVisible()
         return true

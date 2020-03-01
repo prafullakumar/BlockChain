@@ -9,8 +9,13 @@
 import Foundation
 import Moya
 
-final class BCStore {
+protocol BCStoreProtocol: class {
+    func getInfo(completion : @escaping BlockInfoResultCompletion)
+    func getBlock(blockId: String, completion : @escaping BlockDataModelResultCompletion)
+}
 
+
+final class BCNetworkingStore: BCStoreProtocol {
     let networking: Networking
     
     init(networking: Networking) {
