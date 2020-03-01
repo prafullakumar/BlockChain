@@ -31,6 +31,9 @@
 		7765D448240B8AC500B1B20D /* NetworkingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7765D447240B8AC500B1B20D /* NetworkingTest.swift */; };
 		7765D44A240B8C3F00B1B20D /* CBNetworkingStoreTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7765D449240B8C3F00B1B20D /* CBNetworkingStoreTest.swift */; };
 		7765D44B240B8DFE00B1B20D /* block.json in Resources */ = {isa = PBXBuildFile; fileRef = 7765D446240B89CD00B1B20D /* block.json */; };
+		7765D451240BC68000B1B20D /* EntryViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7765D450240BC68000B1B20D /* EntryViewControllerTest.swift */; };
+		7765D453240BCE4400B1B20D /* BCListControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7765D452240BCE4400B1B20D /* BCListControllerTest.swift */; };
+		7765D455240BD1EE00B1B20D /* BCDetailViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7765D454240BD1EE00B1B20D /* BCDetailViewControllerTest.swift */; };
 		F456F4489A1ABC1A943ACB53 /* Pods_BlockChainTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA773B039C9BC56F01470E7E /* Pods_BlockChainTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +77,9 @@
 		7765D446240B89CD00B1B20D /* block.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = block.json; sourceTree = "<group>"; };
 		7765D447240B8AC500B1B20D /* NetworkingTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingTest.swift; sourceTree = "<group>"; };
 		7765D449240B8C3F00B1B20D /* CBNetworkingStoreTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBNetworkingStoreTest.swift; sourceTree = "<group>"; };
+		7765D450240BC68000B1B20D /* EntryViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewControllerTest.swift; sourceTree = "<group>"; };
+		7765D452240BCE4400B1B20D /* BCListControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCListControllerTest.swift; sourceTree = "<group>"; };
+		7765D454240BD1EE00B1B20D /* BCDetailViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCDetailViewControllerTest.swift; sourceTree = "<group>"; };
 		D481977B65D31645A7FA0BB9 /* Pods-BlockChainTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlockChainTests.debug.xcconfig"; path = "Target Support Files/Pods-BlockChainTests/Pods-BlockChainTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DA773B039C9BC56F01470E7E /* Pods_BlockChainTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlockChainTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEE8F04D5A36B2323FF8FB84 /* Pods_BlockChain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlockChain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,10 +192,13 @@
 		773B5A9C240A263400DD00AC /* BlockChainTests */ = {
 			isa = PBXGroup;
 			children = (
+				7765D450240BC68000B1B20D /* EntryViewControllerTest.swift */,
 				773B5A9D240A263400DD00AC /* BlockChainTests.swift */,
 				7765D447240B8AC500B1B20D /* NetworkingTest.swift */,
 				7765D449240B8C3F00B1B20D /* CBNetworkingStoreTest.swift */,
 				773B5A9F240A263400DD00AC /* Info.plist */,
+				7765D452240BCE4400B1B20D /* BCListControllerTest.swift */,
+				7765D454240BD1EE00B1B20D /* BCDetailViewControllerTest.swift */,
 			);
 			path = BlockChainTests;
 			sourceTree = "<group>";
@@ -453,7 +462,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7765D455240BD1EE00B1B20D /* BCDetailViewControllerTest.swift in Sources */,
 				773B5A9E240A263400DD00AC /* BlockChainTests.swift in Sources */,
+				7765D453240BCE4400B1B20D /* BCListControllerTest.swift in Sources */,
+				7765D451240BC68000B1B20D /* EntryViewControllerTest.swift in Sources */,
 				7765D44A240B8C3F00B1B20D /* CBNetworkingStoreTest.swift in Sources */,
 				7765D448240B8AC500B1B20D /* NetworkingTest.swift in Sources */,
 			);

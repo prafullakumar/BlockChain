@@ -1,5 +1,10 @@
 PODS:
   - Alamofire (4.9.1)
+  - FBSnapshotTestCase (2.1.4):
+    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
+  - FBSnapshotTestCase/Core (2.1.4)
+  - FBSnapshotTestCase/SwiftSupport (2.1.4):
+    - FBSnapshotTestCase/Core
   - Moya (13.0.1):
     - Moya/Core (= 13.0.1)
   - Moya/Core (13.0.1):
@@ -8,19 +13,22 @@ PODS:
   - Result (4.1.0)
 
 DEPENDENCIES:
+  - FBSnapshotTestCase
   - Moya
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - FBSnapshotTestCase
     - Moya
     - Result
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
 
-PODFILE CHECKSUM: 439457fe488b0c4cc21f7d0df937231c2dc20040
+PODFILE CHECKSUM: 485f8dbfb57e82f6d904a152c6deb791e04bee20
 
 COCOAPODS: 1.8.4

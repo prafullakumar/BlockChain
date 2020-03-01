@@ -11,6 +11,7 @@ target 'BlockChain' do
   target 'BlockChainTests' do
     inherit! :search_paths
     pod "Moya"
+    pod 'FBSnapshotTestCase'
     # Pods for testing
   end
 
