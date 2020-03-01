@@ -13,6 +13,7 @@ target 'BlockChain' do
     inherit! :search_paths
     pod "Moya"
     pod "EosioSwift", "~> 0.2.1"
+    pod 'FBSnapshotTestCase'
     # Pods for testing
   end
 

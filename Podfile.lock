@@ -4,6 +4,11 @@ PODS:
   - EosioSwift (0.2.1):
     - BigInt (~> 5.0)
     - PromiseKit (~> 6.8)
+  - FBSnapshotTestCase (2.1.4):
+    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
+  - FBSnapshotTestCase/Core (2.1.4)
+  - FBSnapshotTestCase/SwiftSupport (2.1.4):
+    - FBSnapshotTestCase/Core
   - Moya (13.0.1):
     - Moya/Core (= 13.0.1)
   - Moya/Core (13.0.1):
@@ -22,6 +27,7 @@ PODS:
 
 DEPENDENCIES:
   - EosioSwift (~> 0.2.1)
+  - FBSnapshotTestCase
   - Moya
 
 SPEC REPOS:
@@ -29,6 +35,7 @@ SPEC REPOS:
     - Alamofire
     - BigInt
     - EosioSwift
+    - FBSnapshotTestCase
     - Moya
     - PromiseKit
     - Result
@@ -37,10 +44,11 @@ SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   BigInt: 74b4d88367b0e819d9f77393549226d36faeb0d8
   EosioSwift: 21ca0d61e7928a982a64c82b623e7342d7dd86dc
+  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   PromiseKit: 28fda91c973cc377875d8c0ea4f973013c05b6db
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
 
-PODFILE CHECKSUM: 6e7358cc9b2d3d832e3143a3af8eefbd15352c34
+PODFILE CHECKSUM: 61cca0e541b101c4b34607f1f2f5d56a49ac3c75
 
 COCOAPODS: 1.8.4
